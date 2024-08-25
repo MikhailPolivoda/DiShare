@@ -1,0 +1,20 @@
+.search {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    border-radius: 4px; /* Скругление углов */
+    padding: 5px;
+    border: 1px solid rgb(187, 186, 186); /* Задаём границу: 1px ширина, solid стиль, черный цвет */
+}
+
+  .search input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    flex: 1; /* Расширение поля ввода на доступное пространство */
+  }
+  
+  .search i {
+    color: #007bff; /* Цвет иконки */
+    margin-right: 8px; /* Отступ справа от иконки */
+  }

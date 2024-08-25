@@ -1,0 +1,18 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .typeWorks {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 30px; /* Более округлённые края */
+
+}

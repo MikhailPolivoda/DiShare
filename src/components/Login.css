@@ -1,0 +1,60 @@
+/* Контейнер формы */
+.login-container {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%;            /* Половина высоты экрана */
+    left: 50%;           /* Половина ширины экрана */
+    transform: translate(-50%, -50%); /* Сдвиг на половину ширины и высоты элемента */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Форматирование формы */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Группа ввода с Flexbox выравниванием по горизонтали */
+.input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Выравнивание по вертикали */
+    margin-bottom: 15px;
+}
+
+/* Метка */
+label {
+    margin-right: 10px; /* Отступ между меткой и полем ввода */
+    font-weight: bold;
+    width: 80px; /* Установите одинаковую ширину для всех меток */
+    text-align: left; /* Выравнивание текста в метке по правому краю (если нужно) */
+}
+
+/* Поле ввода */
+input {
+    flex: 1; /* Поле ввода занимает оставшееся пространство */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Кнопка */
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Эффект при наведении на кнопку */
+button:hover {
+    background-color: #0056b3;
+}

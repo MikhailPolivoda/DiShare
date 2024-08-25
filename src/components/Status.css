@@ -1,0 +1,7 @@
+.status {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 20%;
+    margin-left: 2%;
+  }
