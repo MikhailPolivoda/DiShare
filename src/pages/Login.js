@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './Login.css';
-import { authenticate } from '../api/api'; // Импортируйте функцию из api.js
+import React, { useState, useEffect } from 'react';
+import '../styles/Login.css';
+import { authenticate } from '../api/api';
 import { useNavigate } from 'react-router-dom';
 
-function Login({ onLogin }) { // Принимаем onLogin как пропс
+function Login({ onLogin }) {    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [response, setResponse] = useState(null);
@@ -11,26 +11,37 @@ function Login({ onLogin }) { // Принимаем onLogin как пропс
 
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    useEffect(() => {
+        const storedAuth = sessionStorage.getItem('isAuthenticated');
+        if (storedAuth === 'true') {
+            onLogin(); 
+            navigate('/');
+        }
+    }, [navigate, onLogin]);
+
+    const handleLogin = async (e) => {
         e.preventDefault();
-
         try {
+            // Выполняем аутентификацию и получаем результат
             const result = await authenticate(email, password);
-            setResponse(result);
-            setError(null);
-            
-            onLogin(); // Вызываем переданный onLogin для обновления состояния авторизации
-
-            navigate('/'); // Перенаправляем пользователя на главную страницу
+            if (result && result.tokenId) {
+                setResponse(result);
+                setError(null);
+                onLogin(); // Уведомление родительского компонента об успешной аутентификации
+                navigate('/'); // Перенаправление на главную страницу
+            } else {
+                    throw new Error(result);
+            }
         } catch (err) {
-            setError(err.message);
+            // Обработка ошибок и вывод сообщения
+            setError(err.message); // Устанавливаем сообщение ошибки
             setResponse(null);
         }
     };
 
     return (
         <div className="login-container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleLogin}>
                 <h2>Login</h2>
                 <div className="input-group flex-row">
                     <label htmlFor="email">Email</label>
@@ -54,7 +65,7 @@ function Login({ onLogin }) { // Принимаем onLogin как пропс
                         required 
                     />
                 </div>
-                <button className = "buttonLogin" type="submit">Login</button>
+                <button className="buttonLogin" type="submit">Login</button>
             </form>
             {response && (
                 <div className="response">
@@ -64,8 +75,7 @@ function Login({ onLogin }) { // Принимаем onLogin как пропс
             )}
             {error && (
                 <div className="error">
-                    <h3>Error:</h3>
-                    <p>{error}</p>
+                    <p>{error}</p> {/* Показываем только текст ошибки без заголовка */}
                 </div>
             )}
         </div>

@@ -47,11 +47,19 @@ export async function authenticate(email, password) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            const errorData = await response.json(); // Получаем JSON-объект ошибки
+            console.log(errorData)
+            const errorMessage = errorData.message || 'Неизвестная ошибка'; // Получаем сообщение ошибки
+            if (errorMessage === 'User Account Locked') {
+                return 'Аккаунт НГТУ заблокирован на час за 15 неправильных попыток ввода данных';
+            }
+            throw new Error(errorMessage);
         }
 
         return await response.json();
     } catch (error) {
-        throw new Error(error.message);
+        // Верните только текст ошибки без "Error:"
+        console.error('Authentication error:', error);
+        return error.message || 'Не удается войти. Проверьте логин и пароль.';
     }
 }
