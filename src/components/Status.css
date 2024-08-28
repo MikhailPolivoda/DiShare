@@ -4,4 +4,7 @@
     text-align: left;
     width: 20%;
     margin-left: 2%;
+    border: 1px solid rgb(139, 137, 137);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    padding-left: 10px;
   }
