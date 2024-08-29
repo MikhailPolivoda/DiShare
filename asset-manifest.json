@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DiShare/static/css/main.33b919a4.css",
-    "main.js": "/DiShare/static/js/main.2daa2375.js",
+    "main.js": "/DiShare/static/js/main.4c0ea0e9.js",
     "static/media/fa-solid-900.ttf": "/DiShare/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/fa-brands-400.ttf": "/DiShare/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
     "static/media/fa-solid-900.woff2": "/DiShare/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
@@ -12,10 +12,10 @@
     "static/media/fa-v4compatibility.woff2": "/DiShare/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/DiShare/index.html",
     "main.33b919a4.css.map": "/DiShare/static/css/main.33b919a4.css.map",
-    "main.2daa2375.js.map": "/DiShare/static/js/main.2daa2375.js.map"
+    "main.4c0ea0e9.js.map": "/DiShare/static/js/main.4c0ea0e9.js.map"
   },
   "entrypoints": [
     "static/css/main.33b919a4.css",
-    "static/js/main.2daa2375.js"
+    "static/js/main.4c0ea0e9.js"
   ]
 }
