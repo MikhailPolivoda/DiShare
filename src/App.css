@@ -29,37 +29,18 @@ body {
   width: 100%;
 }
 
-.logo-info{
-  display: flex;
-  flex-direction: row;
-}
-.main-content{
-  display: flex;
-  flex-direction: row;
-  margin-top: auto;
-  margin-bottom: auto;
-}
 
 .logo{
   width: 150px;
   height: auto;
 }
 
-.main-layout {
+.flex-row{
   display: flex;
-  width: 100%;
-  position: relative;
+  flex-direction: row;
 }
 
-.main-section {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.content {
-  width: 60%;
+.flex-column{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

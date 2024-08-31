@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aqua;
+  }
+
+.logout-button {
+    background-color: #ff6b6b; /* Ярко-красный цвет фона */
+    color: white; /* Белый цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+.logout-button:hover {
+    background-color: #ff4c4c; /* Цвет при наведении */
+}
+
+.logout-button:active {
+    background-color: #ff1c1c; /* Цвет при нажатии */
+}
+
+.logout-button:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.5); /* Теневая обводка при фокусе */
+}

@@ -1,36 +1,16 @@
-import React from 'react';
-import Info from '../components/Info';
-import Menu from '../components/Menu';
-import Search from '../components/Search';
-import Status from '../components/Status';
-import StoryBalance from '../components/StoryBalance';
-import MainContent from '../components/MainContent';
-import logo from '../images/logo.png';
-
+import React from "react";
+import Header from "../components/Header";
+import MainContent from "../components/MainContent";
+import Info from "../components/Info";
 
 function MainPage({ onLogout }) {
-    return (
-        <div className="all-section">
-            <div className="logo-info">
-            <img className="logo" src={logo} alt="Company's logo" />
-                <Info />
-                <button onClick={onLogout}>Logout</button> {/* Кнопка выхода */}
-            </div>
-            <div className="main-content">
-                <Status />
-                <div className="content">
-                    <div className="main-layout">
-                        <div className="main-section">
-                            <Menu />
-                            <Search />
-                            <MainContent />
-                        </div>
-                    </div>
-                </div>
-                <StoryBalance />
-            </div>
-        </div>
-    );
+  return (
+    <div className="all-section">
+      <Header />
+      <Info />
+      <MainContent />
+    </div>
+  );
 }
 
 export default MainPage;

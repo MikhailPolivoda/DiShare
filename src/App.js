@@ -9,10 +9,11 @@ function App() {
     sessionStorage.getItem('isAuthenticated') === 'true'
   );
 
-  const handleLogin = useCallback(() => {
+  const handleLogin = true;
+  /*const handleLogin = useCallback(() => {
     setIsAuthenticated(true);
     sessionStorage.setItem('isAuthenticated', 'true');
-  }, []);
+  }, []);*/
 
   const handleLogout = useCallback(() => {
     setIsAuthenticated(false);
@@ -21,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <MainPage/>
       <Router>
         <Routes>
           <Route
