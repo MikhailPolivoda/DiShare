@@ -1,12 +1,17 @@
-import React, { useState, useCallback } from 'react';
-import './App.css';
-import Login from './pages/Login';
-import MainPage from './pages/MainPage';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import React, { useState, useCallback } from "react";
+import "./App.css";
+import Login from "./pages/Login";
+import MainPage from "./pages/MainPage";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    sessionStorage.getItem('isAuthenticated') === 'true'
+    sessionStorage.getItem("isAuthenticated") === "true"
   );
 
   const handleLogin = true;
@@ -17,20 +22,33 @@ function App() {
 
   const handleLogout = useCallback(() => {
     setIsAuthenticated(false);
-    sessionStorage.removeItem('isAuthenticated');
+    sessionStorage.removeItem("isAuthenticated");
   }, []);
 
   return (
     <div className="App">
+      <MainPage />
       <Router>
         <Routes>
           <Route
             path="/login"
-            element={isAuthenticated ? <Navigate to="/" /> : <Login onLogin={handleLogin} />}
+            element={
+              isAuthenticated ? (
+                <Navigate to="/" />
+              ) : (
+                <Login onLogin={handleLogin} />
+              )
+            }
           />
           <Route
             path="/"
-            element={isAuthenticated ? <MainPage onLogout={handleLogout} /> : <Navigate to="/login" />}
+            element={
+              isAuthenticated ? (
+                <MainPage onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
         </Routes>
       </Router>
